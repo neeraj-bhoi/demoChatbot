@@ -1,0 +1,76 @@
+## Sewa Setu FAQs – 25 Questions with Answers
+
+**1. What is Sewa Setu?**
+Sewa Setu is an online citizen service portal through which citizens can apply for various government services and track the status of their applications.
+
+**2. What is the objective of the Sewa Setu Portal?**
+The objective is to provide government services to citizens in a simple, transparent, and time-bound manner, reducing the need to visit government offices repeatedly.
+
+**3. Which services are available on Sewa Setu?**
+Services such as Income Certificate, Caste Certificate, Domicile Certificate, land records/copies, Marriage Certificate, Urban Local Body services, Panchayat services, Revenue services, Labour services, and other departmental services may be available on the portal.
+
+**4. Can citizens apply directly through the Sewa Setu Portal?**
+Yes. If a service is available through citizen login, citizens can apply online themselves. They can also apply through the nearest Sewa Setu Kendra.
+
+**5. What is a Sewa Setu Kendra?**
+A Sewa Setu Kendra is an authorized service delivery center where operators help citizens fill online applications, upload documents, make payments, and submit applications.
+
+**6. What documents are required to apply for a service?**
+Documents vary from service to service. Commonly required documents may include identity proof, address proof, photograph, affidavit, old certificates, or department-specific documents.
+
+**7. What is an ARN?**
+ARN stands for Application Reference Number. It is a unique number generated after application submission and is used to track the application status.
+
+**8. How can citizens track their application status?**
+Citizens can track the status of their application on the Sewa Setu Portal using their ARN or required application details.
+
+**9. What does “Pending” status mean?**
+“Pending” means that the application is under process and is waiting for verification, approval, or action at the concerned officer or department level.
+
+**10. What does “Approved” status mean?**
+“Approved” means that the application has been accepted and the certificate or service output can be issued or downloaded, wherever applicable.
+
+**11. What does “Rejected” status mean?**
+“Rejected” means that the application has been refused due to a specific reason. The rejection reason may be available on the portal.
+
+**12. What does “Send Back” mean?**
+“Send Back” means that some information or documents in the application are incomplete or incorrect. The applicant or operator must correct the details and resubmit the application.
+
+**13. Can an application be corrected after submission?**
+If the application is sent back, corrections can be made as per the portal workflow. Generally, rejected applications cannot be corrected unless the service rules allow it.
+
+**14. How is payment made on Sewa Setu?**
+For paid services, payment can be made online through the available payment gateway options on the portal.
+
+**15. What should be done if payment is successful but the application does not move forward?**
+The citizen should contact the helpdesk or concerned Sewa Setu Kendra with the ARN, transaction ID, payment receipt, and registered mobile number.
+
+**16. Is a payment receipt generated?**
+Yes. After successful payment, a receipt or transaction details may be generated and available on the portal.
+
+**17. How can citizens download their certificate?**
+After approval, citizens can download the certificate from the portal through login or application tracking options, wherever the download facility is available.
+
+**18. Can certificates be available in DigiLocker?**
+Yes. If the service is integrated with DigiLocker, the certificate may also be available in the citizen’s DigiLocker account.
+
+**19. How much time does it take to process an application?**
+The processing time depends on the service. Each service has its own defined timeline or SLA for disposal.
+
+**20. What should citizens do if the application is not resolved within the defined timeline?**
+Citizens can contact the helpdesk, Sewa Setu Kendra, or concerned department with the ARN. If a grievance or information option is available on the portal, it can also be used.
+
+**21. Is a mobile number required for applying?**
+Yes. A mobile number is generally required for OTP verification, application updates, and communication related to the service.
+
+**22. Can citizens receive updates through SMS or WhatsApp?**
+Yes. Wherever enabled, application-related updates may be sent through SMS or WhatsApp.
+
+**23. What should be done if the wrong document is uploaded?**
+If the application has been submitted, the citizen should contact the Sewa Setu Kendra or helpdesk. If the application is sent back, the document can be corrected and uploaded again.
+
+**24. How can citizens contact the Sewa Setu Helpdesk?**
+Citizens can contact the helpdesk through the phone number, email, or grievance/information option available on the portal. They should share the ARN, registered mobile number, and issue details.
+
+**25. What is the main benefit of using the Sewa Setu Portal?**
+The main benefit is that citizens can access government services online in a transparent, faster, and trackable manner, saving time and improving accountability in service delivery.
