@@ -23,6 +23,15 @@ SQL_INDICATORS = [
     "today",
     "number",
     "track",
+    "दिखाओ",
+    "सूची",
+    "गिनती",
+    "रिकॉर्ड",
+    "आवेदन",
+    "मंजूर",
+    "अस्वीकृत",
+    "पेंडिंग",
+    "आज",
 ]
 FAQ_INDICATORS = [
     "how",
@@ -49,6 +58,29 @@ FAQ_INDICATORS = [
     "guide",
     "steps",
     "instructions",
+    "कैसे",
+    "क्या",
+    "क्यों",
+    "कब",
+    "कहाँ",
+    "कौन",
+    "दस्तावेज",
+    "प्रक्रिया",
+    "आवेदन",
+    "सहायता",
+    "समर्थन",
+    "नीति",
+    "पात्रता",
+    "शुल्क",
+    "सेवा",
+    "वेबसाइट",
+    "पोर्टल",
+    "ज़रूरत",
+    "जरूरत",
+    "आवश्यक",
+    "मार्गदर्शन",
+    "चरण",
+    "निर्देश",
 ]
 
 
@@ -76,12 +108,29 @@ def classify_intent(text: str) -> str:
 
     # If both appear, use stronger SQL signals for data queries
     if has_sql and has_faq:
-        if re.search(r"\b(show|list|find|count|records|applications|pending|approved|rejected|today)\b", content):
+        if re.search(r"(?u)\b(show|list|find|count|records|applications|pending|approved|rejected|today|दिखाओ|सूची|गिनती|रिकॉर्ड|आवेदन|पेंडिंग|मंजूर|अस्वीकृत|आज)\b", content):
             return "sql"
         return "faq"
 
     # Default to FAQ for question-like prompts, else SQL
-    if content.startswith(("what", "how", "why", "when", "where", "which", "can", "is", "are")):
+    if content.startswith((
+        "what",
+        "how",
+        "why",
+        "when",
+        "where",
+        "which",
+        "can",
+        "is",
+        "are",
+        "क्या",
+        "कैसे",
+        "क्यों",
+        "कब",
+        "कहाँ",
+        "कौन",
+        "कृपया",
+    )):
         return "faq"
 
     return "faq"

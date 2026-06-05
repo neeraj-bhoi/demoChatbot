@@ -10,12 +10,9 @@ def _parse_faq_text(raw_text: str, language: str) -> List[Dict]:
     for idx, match in enumerate(matches, start=1):
         header = match.group(1).strip()
         # split header into question and answer if answer follows on same line
-        if header.endswith('?'):
-            question = header
-            answer_text = raw_text[match.end():].split('\n**', 1)[0].strip()
-        else:
-            question = header
-            answer_text = raw_text[match.end():].split('\n**', 1)[0].strip()
+
+        question = header
+        answer_text = raw_text[match.end():].split('\n**', 1)[0].strip()
         # clean answer by stripping trailing numbering or markdown
         answer = re.sub(r"\*\*\d+\.$", "", answer_text).strip()
         sections.append(
