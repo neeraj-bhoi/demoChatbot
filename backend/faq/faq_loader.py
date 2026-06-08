@@ -5,26 +5,61 @@ from typing import Dict, List
 
 def _parse_faq_text(raw_text: str, language: str) -> List[Dict]:
     sections = []
-    pattern = re.compile(r"\*\*\d+\.\s*(.*?)\*\*[\s\S]*?(?=(?:\n\*\*\d+\.|\Z))", re.MULTILINE)
-    matches = re.finditer(pattern, raw_text)
-    for idx, match in enumerate(matches, start=1):
-        header = match.group(1).strip()
-        # split header into question and answer if answer follows on same line
-
-        question = header
-        answer_text = raw_text[match.end():].split('\n**', 1)[0].strip()
-        # clean answer by stripping trailing numbering or markdown
-        answer = re.sub(r"\*\*\d+\.$", "", answer_text).strip()
+    
+    # Split by numbered question pattern like **1. Question**
+    # Match pattern: **NUMBER. Question Text**
+    lines = raw_text.split('\n')
+    current_question = None
+    current_answer = []
+    
+    for line in lines:
+        # Check if this line starts a new question (pattern: **1. Text**)
+        match = re.match(r'^\s*\*\*\d+\.\s+(.*?)\*\*\s*$', line)
+        if match:
+            # If we have a previous question, save it
+            if current_question is not None:
+                answer_text = '\n'.join(current_answer).strip()
+                # Remove markdown and clean up
+                answer_text = re.sub(r'\*\*', '', answer_text)
+                answer_text = answer_text.strip()
+                
+                sections.append(
+                    {
+                        "id": f"{language}-{len(sections) + 1}",
+                        "language": language,
+                        "question": current_question,
+                        "answer": answer_text,
+                        "text": f"Q: {current_question}\nA: {answer_text}",
+                        "source": "FAQ Knowledge Base",
+                    }
+                )
+            
+            # Start a new question
+            current_question = match.group(1).strip()
+            current_answer = []
+        elif current_question is not None:
+            # This is part of the answer for current question
+            if line.strip():  # Only add non-empty lines
+                current_answer.append(line)
+    
+    # Don't forget the last question
+    if current_question is not None:
+        answer_text = '\n'.join(current_answer).strip()
+        # Remove markdown and clean up
+        answer_text = re.sub(r'\*\*', '', answer_text)
+        answer_text = answer_text.strip()
+        
         sections.append(
             {
-                "id": f"{language}-{idx}",
+                "id": f"{language}-{len(sections) + 1}",
                 "language": language,
-                "question": question,
-                "answer": answer,
-                "text": f"Q: {question}\nA: {answer}",
+                "question": current_question,
+                "answer": answer_text,
+                "text": f"Q: {current_question}\nA: {answer_text}",
                 "source": "FAQ Knowledge Base",
             }
         )
+    
     return sections
 
 

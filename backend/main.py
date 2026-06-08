@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from database import execute_query
-from intent import classify_intent
+from ai_intent_classifier import classify_intent_ai
 from faq.faq_service import answer_faq
 from ollama_service import generate_sql
 
@@ -54,7 +54,7 @@ def handle_chat(request: ChatRequest):
     if not prompt:
         raise HTTPException(status_code=400, detail="Prompt is required")
 
-    intent = classify_intent(prompt)
+    intent = classify_intent_ai(prompt)
     if intent == "faq":
         try:
             answer, sources = answer_faq(prompt)
